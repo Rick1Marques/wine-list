@@ -1,12 +1,11 @@
 import express from "express";
-
 import path from "path";
+import bodyParser from "body-parser";
+import routes from "./routes/routes.js";
+import sequelize from "./lib/db.js";
+import Wine from "./models/wine.js";
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
-
-import bodyParser from "body-parser";
-
-import routes from "./routes/routes.js";
 
 const app = express();
 
@@ -18,4 +17,13 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
 
-app.listen(3000);
+async function startServer() {
+  try {
+    await sequelize.sync();
+    app.listen(3000);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+startServer();
