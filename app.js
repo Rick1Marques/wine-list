@@ -19,7 +19,8 @@ app.use(routes);
 
 async function startServer() {
   try {
-    await sequelize.sync();
+    await sequelize.sync({ force: true });
+    // await sequelize.sync();
     app.listen(3000);
   } catch (error) {
     console.log(error);

@@ -1,9 +1,12 @@
 import { Router } from "express";
+import * as controllers from "../controllers/controllers.js";
+
+import Wine from "../models/wine.js";
 
 const router = Router();
 
-router.get("/add-wine", (req, res) => {
-  res.render("add-wine", { pageTitle: "Add Wine" });
-});
+router.get("/add-wine", controllers.getAddWine);
+
+router.post("/add-wine", controllers.postAddWine);
 
 export default router;
