@@ -1,63 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= pageTitle %></title>
-    <link rel="stylesheet" href="../public/css/global.css" />
+<%- include("./includes/head.ejs") %>
+
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="/add-wine">Add Wine</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <form action="/add-wine" method="post">
-        <div>
-          <label for="type">Type: </label>
-          <input type="text" name="type" />
-        </div>
-        <div>
-          <label for="grape">Grape: </label>
-          <input type="text" name="grape" />
-        </div>
-        <div>
-          <label for="country">Country: </label>
-          <input type="text" name="country" />
-        </div>
-        <div>
-          <label for="region">Region: </label>
-          <input type="text" name="region" />
-        </div>
-        <div>
-          <label for="year">Year: </label>
-          <input type="number" name="year" step="1" />
-        </div>
-        <div>
-          <label for="producer">Producer: </label>
-          <input type="text" name="producer" />
-        </div>
-        <div>
-          <label for="abv">ABV(%): </label>
-          <input type="number" name="abv" step="0.1" min="0" max="100" />
-        </div>
-        <div>
-          <label for="description">Description: </label>
-          <textarea name="description" rows="3"></textarea>
-        </div>
-        <div>
-          <label for="imageUrl">Image(url): </label>
-          <input type="text" name="imageUrl" />
-        </div>
-        <div>
-          <label for="rate">Rate: </label>
-          <input type="number" name="rate" step="0.1" min="0" max="10" />
-        </div>
-        <button type="submit">Add Wine</button>
-      </form>
-    </main>
-  </body>
-</html>
+
+<%- include("./includes/nav.ejs") %>
+
+
+<main>
+  <form action="/add-wine" method="post">
+    <div>
+      <label for="type">Type: </label>
+      <input type="text" name="type" />
+    </div>
+    <div>
+      <label for="grape">Grape: </label>
+      <input type="text" name="grape" />
+    </div>
+    <div>
+      <label for="country">Country: </label>
+      <input type="text" name="country" />
+    </div>
+    <div>
+      <label for="region">Region: </label>
+      <input type="text" name="region" />
+    </div>
+    <div>
+      <label for="year">Year: </label>
+      <input type="number" name="year" step="1" />
+    </div>
+    <div>
+      <label for="producer">Producer: </label>
+      <input type="text" name="producer" />
+    </div>
+    <div>
+      <label for="abv">ABV(%): </label>
+      <input type="number" name="abv" step="0.1" min="0" max="100" />
+    </div>
+    <div>
+      <label for="description">Description: </label>
+      <textarea name="description" rows="3"></textarea>
+    </div>
+    <div>
+      <label for="imageUrl">Image(url): </label>
+      <input type="text" name="imageUrl" />
+    </div>
+    <div>
+      <label for="rate">Rate: </label>
+      <input type="number" name="rate" step="0.1" min="0" max="10" />
+    </div>
+    <button type="submit">Add Wine</button>
+  </form>
+</main>
+
+<%- include("./includes/end.ejs") %>
