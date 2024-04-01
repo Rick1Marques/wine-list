@@ -8,6 +8,10 @@ const Wine = sequelize.define("wine", {
     autoIncrement: true,
     allowNull: false,
   },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   type: {
     type: DataTypes.STRING,
     allowNull: false,

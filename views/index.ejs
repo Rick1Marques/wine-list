@@ -4,8 +4,17 @@
 <%- include("./includes/nav.ejs") %>
 
 <main>
-    <!-- loop through wines -->
-    <h1><%= wines[0].type %></h1>
+    <% if(wines.length > 0){ %>
+        <% wines.forEach(wine => { %>
+            <article>
+                <h2><%= wine.name %> <%= wine.year %></h2>
+                <h3><%= wine.producer %></h3>
+                <img src="<%= wine.imageUrl %>" alt="<%= wine.name%>">
+            </article>
+            <%}); %>
+    <%} else {%>
+        <h1>No Products Found!</h1>
+        <% } %>
 </main>
 
 
