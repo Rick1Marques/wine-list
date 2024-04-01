@@ -10,6 +10,10 @@
                 <h2><%= wine.name %> <%= wine.year %></h2>
                 <h3><%= wine.producer %></h3>
                 <img src="<%= wine.imageUrl %>" alt="<%= wine.name%>">
+                <form action="/delete-wine" method="post">
+                    <input type="hidden" value="<%= wine.id %>" name="wineId">
+                    <button type="submit">Delete</button>
+                </form>
             </article>
             <%}); %>
     <%} else {%>

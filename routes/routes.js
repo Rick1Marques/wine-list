@@ -11,4 +11,6 @@ router.post("/add-wine", controllers.postAddWine);
 
 router.get("/", controllers.getWines);
 
+router.post("/delete-wine", controllers.postDeleteWine);
+
 export default router;

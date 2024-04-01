@@ -24,3 +24,13 @@ export const getWines = async (req, res) => {
     console.log(error);
   }
 };
+
+export const postDeleteWine = async (req, res) => {
+  try {
+    const wineId = req.body.wineId;
+    await Wine.destroy({ where: { id: wineId } });
+    res.redirect("/");
+  } catch (error) {
+    console.log(error);
+  }
+};
