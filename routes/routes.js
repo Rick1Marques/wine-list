@@ -9,4 +9,6 @@ router.get("/add-wine", controllers.getAddWine);
 
 router.post("/add-wine", controllers.postAddWine);
 
+router.get("/", controllers.getWines);
+
 export default router;
