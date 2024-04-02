@@ -1,0 +1,63 @@
+<%- include("./includes/head.ejs") %>
+
+  </head>
+  <body>
+
+<%- include("./includes/nav.ejs") %>
+
+
+<main>
+  <form action="<%= edit ? "/edit-wine" : "/add-wine" %>" method="post">
+    <div>
+      <label for="name">Name: </label>
+      <input type="text" name="name" value="<%= edit ? wine.name : "" %>"/>
+    </div>
+    <div>
+      <label for="type">Type: </label>
+      <input type="text" name="type" value="<%= edit ? wine.type : "" %>"/>
+    </div>
+    <div>
+      <label for="grape">Grape: </label>
+      <input type="text" name="grape" value="<%= edit ? wine.grape : "" %>"/>
+    </div>
+    <div>
+      <label for="country">Country: </label>
+      <input type="text" name="country" value="<%= edit ? wine.country : "" %>"/>
+    </div>
+    <div>
+      <label for="region">Region: </label>
+      <input type="text" name="region" value="<%= edit ? wine.region : "" %>"/>
+    </div>
+    <div>
+      <label for="year">Year: </label>
+      <input type="number" name="year" step="1" value="<%= edit ? wine.year : "" %>"/>
+    </div>
+    <div>
+      <label for="producer">Producer: </label>
+      <input type="text" name="producer" value="<%= edit ? wine.producer : "" %>"/>
+    </div>
+    <div>
+      <label for="abv">ABV(%): </label>
+      <input type="number" name="abv" step="0.1" min="0" max="100" value="<%= edit ? wine.abv : "" %>"/>
+    </div>
+    <div>
+      <label for="description">Description: </label>
+      <textarea name="description" rows="3" ><%= edit ? wine.description : "" %></textarea>
+    </div>
+    <div>
+      <label for="imageUrl">Image(url): </label>
+      <input type="text" name="imageUrl" value="<%= edit ? wine.imageUrl : "" %>"/>
+    </div>
+    <div>
+      <label for="rate">Rate: </label>
+      <input type="number" name="rate" step="0.1" min="0" max="10" value="<%= edit ? wine.rate : "" %>"/>
+    </div>
+    <% if(edit){ %>
+      <input type="hidden" name="wineId" value="<%= wine.id %> ">
+    <% } %>
+    <button type="submit"><%= edit ? "Save": "Add Wine" %>
+ </button>
+  </form>
+</main>
+
+<%- include("./includes/end.ejs") %>

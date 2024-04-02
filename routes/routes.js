@@ -13,4 +13,8 @@ router.get("/", controllers.getWines);
 
 router.post("/delete-wine", controllers.postDeleteWine);
 
+router.get("/edit-wine/:wineId", controllers.getEditWine);
+
+router.post("/edit-wine", controllers.postEditWine);
+
 export default router;
